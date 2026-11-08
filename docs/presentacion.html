@@ -29,9 +29,11 @@ button{background:#4fc3f7;border:0;border-radius:8px;padding:.7em 1.4em;font-siz
 <li>Reinicio de supervisor tras NG</li><li>Una fuente, una placa</li></ul></section>
 
 <section class="s"><h2>Ciclo de operación</h2><ul>
-<li>1. Colocar conector (contacto bifurcado)</li><li>2. Detectar soldadura</li>
-<li>3. Si OK: desbloquear unos segundos</li><li>4. Presionar la tapa</li><li>5. Verificar tapa</li>
-<li class="ng">Falta soldadura o tapa → rojo y bloqueo</li></ul></section>
+<li>Cámara siempre en su base, apuntando hacia abajo</li>
+<li>1. Colocar la pieza bajo la cámara · 2. Detectar soldadura</li>
+<li>3. Si OK: desbloquear la prensa (tiempo límite)</li><li>4. Mover a la prensa y presionar la tapa</li>
+<li>5. Regresar bajo la cámara · 6. Verificar tapa</li>
+<li class="ng">Falta soldadura, tapa o no regresa → rojo y bloqueo</li></ul></section>
 
 <section class="s"><h2>Arquitectura</h2>
 <p><span class="box">Microscopio USB</span> → <span class="box">ESP32-P4 7"</span> → <span class="box">Relevador</span> → <span class="box">Cerradura</span> → <span class="box">Prensa</span></p>
@@ -43,7 +45,7 @@ button{background:#4fc3f7;border:0;border-radius:8px;padding:.7em 1.4em;font-siz
 <tr><td>Prensa</td><td>Schmidt manual (piñón y cremallera)</td></tr>
 <tr><td>Cámara</td><td>Celestron MicroDirect 1080p (44316), UVC por USB</td></tr>
 <tr><td>Controlador</td><td>Waveshare ESP32-P4-WIFI6-Touch-LCD-7B</td></tr>
-<tr><td>Fuente</td><td>Mean Well RD-65A (5 V 6 A + 12 V 3 A)</td></tr>
+<tr><td>Fuente</td><td>Mean Well RD-65A (5 V 6 A + 12 V 3 A, 129×98×38 mm)</td></tr>
 <tr><td>Cerradura</td><td>Adafruit 1512 solenoide 12 V</td></tr>
 <tr><td>Relevador</td><td>DFRobot DFR0017</td></tr></table></section>
 

@@ -16,11 +16,30 @@
 ## Equipo ya definido
 - Prensa manual Schmidt (piñón y cremallera, palanca).
 - Microscopio Celestron MicroDirect 1080p HDMI (44316): por USB es cámara UVC; 5 V / 1 A. USB y HDMI simultáneos: **sin probar**.
-- Escuadra propia para montaje del microscopio (30-45°, fuera del recorrido del vástago).
+- Base original del microscopio (cámara apuntando hacia abajo) con **plantilla/nido de posición** para la pieza (por fabricar).
+
+## Fuente Mean Well RD-65A
+![Fuente RD-65A](img/fuente-rd65a.png)
+
+*Foto: hoja de datos del fabricante (Mean Well RD-65, versión 2024-11-22).*
+
+| Dato | Valor |
+|------|-------|
+| Salidas | CH1 5 V / 6 A (ajustable 4.75–5.5 V) · CH2 12 V / 3 A |
+| Potencia | 66 W |
+| Entrada | 88–264 VAC, 47–63 Hz |
+| Rizado máx. | 80 mVp-p (5 V) · 120 mVp-p (12 V) |
+| Tolerancia | 5 V ±2 % · 12 V ±6 % |
+| Protecciones | Cortocircuito, sobrecarga, sobretensión (CH1); modo hiccup |
+| Temperatura | −25 a +70 °C (ver curva de derrateo) |
+| Dimensiones / peso | 129 × 98 × 38 mm · 0.44 kg |
+| Nota del fabricante | Con varias salidas, se recomienda carga en CH1 > 10 % (≈ 0.6 A) |
+
+Bornes: 1 AC/L · 2 AC/N · 3 FG · 4 y 6 COM · 5 +V2 (12 V) · 7 +V1 (5 V). Ver [conexiones](04-conexiones.md).
 
 ## Consumo estimado
 5 V ≈ 2.1 A; 12 V ≈ 0.65 A intermitente; total ≈ 19 W de 66 W.
-La RD-65A requiere carga mínima: medir 12 V en reposo; si pasa de 13 V, agregar resistencia 56 Ω / 5 W entre +12 V y COM.
+La hoja de datos recomienda CH1 > 10 % de carga (≈ 0.6 A); nuestro 5 V ≈ 2.1 A (≈ 35 %), así que se cumple. Aun así, medir 12 V en reposo; si pasa de 13 V, agregar resistencia 56 Ω / 5 W entre +12 V y COM.
 
 ## Equipo (fotos)
 | Prensa Schmidt | Microscopio Celestron | Pantalla 7" |

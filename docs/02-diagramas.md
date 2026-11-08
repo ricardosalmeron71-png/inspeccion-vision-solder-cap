@@ -16,28 +16,32 @@ flowchart LR
 ## Flujo del ciclo
 ```mermaid
 flowchart TD
-    A[Esperando pieza] --> B[Revisar soldadura]
+    A[Colocar pieza bajo la cámara] --> B[Revisar soldadura]
     B --> C{Soldadura OK?}
-    C -- sí --> D[Desbloquear prensa unos segundos]
     C -- no --> NG[NG rojo, bloqueo, contador NG]
-    D --> E[Operador presiona tapa]
-    E --> F{Tapa puesta?}
-    F -- sí --> OK[OK verde, contador OK]
-    F -- no --> NG
-    OK --> A
+    C -- sí --> D[Desbloquear prensa, tiempo límite]
+    D --> E[Mover a la prensa y presionar tapa]
+    E --> F[Regresar pieza bajo la cámara]
+    F --> G{Tapa OK?}
+    G -- sí --> OK[OK verde, contador OK]
+    G -- no --> NG
+    E -. no regresa a tiempo .-> NG
+    OK -->|pieza retirada| A
     NG -->|reinicio de supervisor| A
 ```
-Reglas: tiempo límite (si no se presiona, se vuelve a bloquear); reinicio obligatorio después de NG; la clase `vacio` controla la espera de pieza.
+Reglas: tiempo límite de desbloqueo; plazo de retorno de la pieza; reinicio obligatorio después de NG; la clase `vacio` indica nido libre (pieza retirada) y controla la espera.
 
 ## Estados del firmware
 ```mermaid
 stateDiagram-v2
     [*] --> ESPERANDO
     ESPERANDO --> REVISANDO: pieza detectada (no vacio)
-    REVISANDO --> DESBLOQUEADO: sold_ok estable
+    REVISANDO --> DESBLOQUEADO: sold_ok estable (relé ON)
     REVISANDO --> NG: sin_sold estable
-    DESBLOQUEADO --> VERIFICANDO: tapa presionada / pieza cambia
-    DESBLOQUEADO --> ESPERANDO: tiempo límite (re-bloqueo)
+    DESBLOQUEADO --> ESPERANDO: vence T_DESBLOQ con la pieza aún en la cámara
+    DESBLOQUEADO --> EN_PRENSA: pieza retirada (vacio)
+    EN_PRENSA --> VERIFICANDO: pieza regresa
+    EN_PRENSA --> NG: vence T_RETORNO
     VERIFICANDO --> OK: tapa_ok
     VERIFICANDO --> NG: tapa_mal / sin tapa
     OK --> ESPERANDO: pieza retirada (vacio)
@@ -57,6 +61,8 @@ flowchart LR
 ```
 
 ## Imágenes de los diagramas
+![Estaciones](img/estaciones.png)
+
 ![Flujo de decisión](img/flujo.png)
 
 ![Máquina de estados](img/estados.png)

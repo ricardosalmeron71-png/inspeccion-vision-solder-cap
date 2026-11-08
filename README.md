@@ -20,7 +20,10 @@ Sistema autónomo (sin PC en la línea) de control de calidad con visión por co
 | – | Presentación: [PPTX](docs/presentacion.pptx) · [PDF](docs/presentacion.pdf) · [HTML](docs/presentacion.html) | Deck del proyecto |
 
 ## Resumen del ciclo
-1. Colocar el conector (contacto bifurcado). 2. Detectar soldadura. 3. Si OK, desbloquear la prensa unos segundos. 4. Presionar la tapa. 5. Verificar tapa. Si falta soldadura o tapa: **rojo y bloqueo**.
+La cámara está **siempre en su base, apuntando hacia abajo**; la pieza se mueve entre dos estaciones.
+1. Colocar el conector (contacto bifurcado) bajo la cámara. 2. Detectar soldadura. 3. Si es OK, desbloquear la prensa por un tiempo límite. 4. Mover la pieza a la prensa y presionar la tapa. 5. Regresar la pieza bajo la cámara. 6. Verificar la tapa. Si falta soldadura o tapa: **rojo y bloqueo**.
+
+![Estaciones de trabajo](docs/img/estaciones.png)
 
 ## Estado
 Fase: preparación / captura de fotos de entrenamiento. Placa P4 en espera de llegada. Ver [seguimiento](docs/07-seguimiento.md).
