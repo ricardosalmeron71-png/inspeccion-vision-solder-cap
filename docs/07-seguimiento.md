@@ -17,7 +17,7 @@
 - [ ] Fabricar la plantilla de posición bajo la cámara.
 - [ ] Confirmar con Schmidt qué pasa si la cerradura se re-bloquea durante la carrera de la palanca.
 - [ ] Definir criterios de éxito con calidad.
-- [ ] Comprar materiales (DigiKey / Steren / placa).
+- [ ] Comprar materiales (DigiKey / Steren / Amazon). Confirmar las especificaciones de los 4 enlaces de Amazon (ver materiales).
 - [ ] Capturar fotos de entrenamiento y entrenar modelo.
 
 ## Riesgos
