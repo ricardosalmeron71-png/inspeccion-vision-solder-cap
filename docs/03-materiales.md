@@ -53,7 +53,7 @@ La hoja de datos recomienda CH1 > 10 % de carga (≈ 0.6 A); nuestro 5 V ≈ 2.1
 |-------|--------|----------------------------|
 | Placa ESP32-P4 WiFi6 con pantalla táctil | [B0FTLW5RKN](https://www.amazon.com.mx/dp/B0FTLW5RKN) | Que sea la Waveshare 7B (7", 1024x600), no otro tamaño; USB-A; variante del chip; devoluciones |
 | Cerradura solenoide 12 V | [B07H4J3P3P](https://www.amazon.com.mx/dp/B07H4J3P3P) | 12 V y corriente; que quede **bloqueada sin energía**; fuerza y carrera (no soporta ~200 N de la palanca) |
-| Fuente Mean Well RD-65A | [B07MH9PNMM](https://www.amazon.com.mx/dp/B07MH9PNMM) | Que diga **RD-65A (5 V + 12 V)** y no RD-65B (5 V + 24 V); vendedor y original |
+| Fuente Mean Well RD-65A | [B07MH9PNMM](https://www.amazon.com.mx/dp/B07MH9PNMM) | ✅ Confirmado en la ficha: RD-65A, 5 V 6 A + 12 V 3 A, 66 W, **$384.08 MXN**. Falta: vendedor y que sea original (solo 1 reseña) |
 | Módulo relevador 5 V optoacoplado | [B07QLZ6T8W](https://www.amazon.com.mx/dp/B07QLZ6T8W) | Bobina 5 V; nivel de disparo (alto o bajo); que active con 3.3 V; contacto ≥ corriente de la cerradura a 12 V CC |
 
 Alerta del relevador: si el módulo dispara con nivel **bajo**, hay que garantizar que el GPIO quede en estado "bloqueado" durante el arranque y el reinicio.
