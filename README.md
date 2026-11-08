@@ -14,7 +14,7 @@ Sistema autónomo (sin PC en la línea) de control de calidad con visión por co
 | 5 | [Guía de programación](docs/05-guia-programacion.md) | Software, entorno, máquina de estados |
 | 6 | [Entrenamiento con imágenes](docs/06-entrenamiento-imagenes.md) | Captura, clases, Edge Impulse |
 | 7 | [Seguimiento](docs/07-seguimiento.md) | Pendientes, riesgos, bitácora |
-| – | [Presentación](docs/presentacion.html) | Deck del proyecto (abrir en navegador) |
+| – | Presentación: [PPTX](docs/presentacion.pptx) · [PDF](docs/presentacion.pdf) · [HTML](docs/presentacion.html) | Deck del proyecto |
 
 ## Resumen del ciclo
 1. Colocar el conector (contacto bifurcado). 2. Detectar soldadura. 3. Si OK, desbloquear la prensa unos segundos. 4. Presionar la tapa. 5. Verificar tapa. Si falta soldadura o tapa: **rojo y bloqueo**.
