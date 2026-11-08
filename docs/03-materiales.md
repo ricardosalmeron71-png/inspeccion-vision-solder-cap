@@ -21,3 +21,8 @@
 ## Consumo estimado
 5 V ≈ 2.1 A; 12 V ≈ 0.65 A intermitente; total ≈ 19 W de 66 W.
 La RD-65A requiere carga mínima: medir 12 V en reposo; si pasa de 13 V, agregar resistencia 56 Ω / 5 W entre +12 V y COM.
+
+## Equipo (fotos)
+| Prensa Schmidt | Microscopio Celestron | Pantalla 7" |
+|---|---|---|
+| ![](img/prensa-schmidt.png) | ![](img/microscopio-celestron.png) | ![](img/pantalla-7in.png) |

@@ -55,3 +55,8 @@ flowchart LR
     LM[Cerradura -] --> GND[COM / tierra común]
     GPIO[GPIO PH2.0] --> RIN[Relevador IN]
 ```
+
+## Imágenes de los diagramas
+![Flujo de decisión](img/flujo.png)
+
+![Máquina de estados](img/estados.png)

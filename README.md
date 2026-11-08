@@ -4,6 +4,9 @@ Sistema autónomo (sin PC en la línea) de control de calidad con visión por co
 
 > ⚠️ Es control de calidad, **no** un dispositivo de seguridad certificado.
 
+## Vista previa (ilustración conceptual)
+![Vista previa del sistema ensamblado](docs/img/ensamble-previa.png)
+
 ## Documentación
 | # | Documento | Contenido |
 |---|-----------|-----------|

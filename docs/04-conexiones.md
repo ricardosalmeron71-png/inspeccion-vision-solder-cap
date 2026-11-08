@@ -33,3 +33,9 @@
 
 ## Advertencia mecánica
 La cerradura Adafruit 1512 es de gabinete y **no soporta los ~200 N de la palanca**. Solo para prueba de concepto con tope rígido; para uso real, consultar a Schmidt y a seguridad e higiene.
+
+## Diagrama de conexiones
+![Conexiones](img/conexiones.png)
+
+## Montaje mecánico
+![Montaje](img/montaje.png)

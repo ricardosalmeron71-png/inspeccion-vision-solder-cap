@@ -30,3 +30,4 @@ Tomar las fotos de entrenamiento mientras llega la placa.
 | Fecha | Avance |
 |-------|--------|
 | 2026-11-08 | Documentación inicial, diagramas y presentación en el repo |
+| 2026-11-08 | Presentación (PPTX/PDF) con formato Amphenol RF, imágenes y diagramas |
