@@ -27,7 +27,7 @@
 
 ## Verificaciones antes de energizar
 - [ ] Medir +12 V en reposo (si > 13 V, poner 56 Ω / 5 W entre +12 V y COM).
-- [ ] Confirmar que el relé (DFR0017 o el módulo de Amazon) activa con 3.3 V del GPIO.
+- [ ] Confirmar que el módulo de relé activa con 3.3 V del GPIO.
 - [ ] Módulo de Amazon: puente en alto (H), resistencia 10 kΩ de IN a GND, cerradura en el contacto NO.
 - [ ] Probar que el relé NO se activa durante el arranque y el reinicio de la placa.
 - [ ] Continuidad: todas las tierras a COM; FG a tierra física.
