@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inspección con visión – Soldadura y tapa</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#10151c;color:#e8edf3}
+.s{display:none;min-height:100vh;padding:7vh 6vw 12vh}.s.on{display:block}
+h1{font-size:clamp(1.8rem,5vw,3rem);margin:.2em 0;color:#4fc3f7}h2{font-size:clamp(1.4rem,4vw,2.2rem);color:#4fc3f7;margin-top:0}
+li{margin:.45em 0;font-size:clamp(1rem,2.6vw,1.4rem)}table{border-collapse:collapse;width:100%;font-size:clamp(.8rem,2.2vw,1.1rem)}
+td,th{border:1px solid #2c3a4a;padding:.4em .6em;text-align:left}th{background:#1b2633}
+.ok{color:#66bb6a}.ng{color:#ef5350}.w{color:#ffca28}pre{background:#1b2633;padding:1em;overflow:auto;border-radius:8px}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:.8em 1em;background:#0b0f14}
+button{background:#4fc3f7;border:0;border-radius:8px;padding:.7em 1.4em;font-size:1rem}span{font-size:.9rem;color:#8aa}
+.box{display:inline-block;border:2px solid #4fc3f7;border-radius:8px;padding:.4em .8em;margin:.2em}
+</style></head><body>
+
+<section class="s on"><h1>Inspección con visión por computadora</h1>
+<p>Soldadura y tapa de conector coaxial angular</p>
+<p>Permiso (go) para prensa manual · Control de calidad, no dispositivo de seguridad certificado</p></section>
+
+<section class="s"><h2>Propósito</h2><ul>
+<li>Evitar que avance una pieza sin soldadura o sin tapa</li>
+<li>Equipo autónomo: sin PC en la línea (IT no lo permite)</li>
+<li>Bloquea la palanca hasta detectar soldadura OK; después verifica la tapa</li></ul></section>
+
+<section class="s"><h2>Objetivos</h2><ul>
+<li>Detectar soldadura presente/ausente</li><li>Bloquear/desbloquear la prensa unos segundos</li>
+<li>Verificar tapa tras el prensado</li><li>Interfaz: estado, video en vivo, contadores OK/NG</li>
+<li>Reinicio de supervisor tras NG</li><li>Una fuente, una placa</li></ul></section>
+
+<section class="s"><h2>Ciclo de operación</h2><ul>
+<li>1. Colocar conector (contacto bifurcado)</li><li>2. Detectar soldadura</li>
+<li>3. Si OK: desbloquear unos segundos</li><li>4. Presionar la tapa</li><li>5. Verificar tapa</li>
+<li class="ng">Falta soldadura o tapa → rojo y bloqueo</li></ul></section>
+
+<section class="s"><h2>Arquitectura</h2>
+<p><span class="box">Microscopio USB</span> → <span class="box">ESP32-P4 7"</span> → <span class="box">Relevador</span> → <span class="box">Cerradura</span> → <span class="box">Prensa</span></p>
+<p><span class="box">Fuente RD-65A</span> 5 V → microscopio, placa, relevador · 12 V → relevador/cerradura</p>
+<p>Diagramas Mermaid completos en <code>docs/02-diagramas.md</code></p></section>
+
+<section class="s"><h2>Equipo</h2><table>
+<tr><th>Elemento</th><th>Modelo</th></tr>
+<tr><td>Prensa</td><td>Schmidt manual (piñón y cremallera)</td></tr>
+<tr><td>Cámara</td><td>Celestron MicroDirect 1080p (44316), UVC por USB</td></tr>
+<tr><td>Controlador</td><td>Waveshare ESP32-P4-WIFI6-Touch-LCD-7B</td></tr>
+<tr><td>Fuente</td><td>Mean Well RD-65A (5 V 6 A + 12 V 3 A)</td></tr>
+<tr><td>Cerradura</td><td>Adafruit 1512 solenoide 12 V</td></tr>
+<tr><td>Relevador</td><td>DFRobot DFR0017</td></tr></table></section>
+
+<section class="s"><h2>Conexiones</h2><ul>
+<li>+5 V → placa, microscopio (inyector), relevador VCC</li>
+<li>+12 V → relevador COM → NO → cerradura +; cerradura − → COM</li>
+<li>GPIO (PH2.0) → relevador IN (por definir)</li>
+<li>Todas las tierras a COM; FG a tierra física</li>
+<li>Diodo 1N4007 (cátodo a +12 V) y capacitor 1000 µF / 25 V</li></ul></section>
+
+<section class="s"><h2>Modelo de visión (Edge Impulse)</h2><ul>
+<li>Clases: vacio, sin_sold, sold_ok, tapa_ok, tapa_mal (opcional)</li>
+<li>80-100 fotos por clase, recolocando la pieza</li>
+<li>Variar lote, día y operador</li>
+<li>Nombres: clase.lote.dia.consecutivo.jpg</li>
+<li>Prueba con un lote/día completo separado; prioridad: cero falsos OK</li></ul></section>
+
+<section class="s"><h2>Software</h2><ul>
+<li>Pantalla y táctil: Arduino IDE (ejemplos Waveshare)</li>
+<li>Cámara USB: ESP-IDF (usb_host_uvc, usb_camera_lcd_display)</li>
+<li>Máquina de estados: esperando → revisando → desbloqueado → OK/NG</li>
+<li>Relevador OFF = bloqueado (falla segura)</li>
+<li class="w">Decisión abierta: Arduino vs ESP-IDF</li></ul></section>
+
+<section class="s"><h2>Riesgos</h2><ul>
+<li class="ng">Cerradura no soporta ~200 N: solo prueba de concepto con tope rígido</li>
+<li class="w">No es dispositivo de seguridad certificado (consultar Schmidt y seguridad e higiene; CE, dos manos)</li>
+<li>Falsos OK → umbral alto, N frames, prueba separada</li>
+<li>Placa tarda 30-60 días → capturar fotos mientras tanto</li>
+<li>Fuente: medir 12 V en reposo (carga mínima 56 Ω / 5 W)</li></ul></section>
+
+<section class="s"><h2>Estado y pendientes</h2><ul>
+<li class="ok">Hecho: diseño, selección de equipo, lista de materiales, documentación</li>
+<li>Siguiente: tomar fotos de entrenamiento</li>
+<li>Pendiente: variante de chip "postv3"</li><li>Pendiente: GPIO del relevador</li>
+<li>Pendiente: probar USB+HDMI simultáneos</li><li>Pendiente: consulta con Schmidt y seguridad</li>
+<li>Seguimiento: <code>docs/07-seguimiento.md</code></li></ul></section>
+
+<nav><button onclick="go(-1)">◀</button><span id="n"></span><button onclick="go(1)">▶</button></nav>
+<script>
+const S=[...document.querySelectorAll('.s')];let i=0;
+function go(d){S[i].classList.remove('on');i=Math.max(0,Math.min(S.length-1,i+d));S[i].classList.add('on');n.textContent=(i+1)+' / '+S.length}
+document.addEventListener('keydown',e=>{if(e.key=='ArrowRight')go(1);if(e.key=='ArrowLeft')go(-1)});
+let x0;addEventListener('touchstart',e=>x0=e.touches[0].clientX);addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>60)go(d<0?1:-1)});
+go(0)
+</script></body></html>
