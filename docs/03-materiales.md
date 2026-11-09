@@ -1,5 +1,27 @@
 # 3. Materiales
 
+## Lista completa (consolidada)
+| # | Pieza | Cant. | Fuente de compra | Precio / estado |
+|---|-------|-------|------------------|-----------------|
+| 1 | Placa Waveshare ESP32-P4-WIFI6-Touch-LCD-7B (7", 1024x600) | 1 | Amazon [B0FTLW5RKN](https://www.amazon.com.mx/dp/B0FTLW5RKN) o Waveshare (SKU 32510) | Por confirmar; 30-60 días |
+| 2 | Microscopio Celestron MicroDirect 1080p (44316) con base | 1 | Ya lo tienes | — |
+| 3 | Prensa manual Schmidt | 1 | Ya la tienes | — |
+| 4 | Fuente Mean Well RD-65A (5 V 6 A + 12 V 3 A) | 1 | Amazon [B07MH9PNMM](https://www.amazon.com.mx/dp/B07MH9PNMM) o DigiKey 1866-3987-ND | $384.08 (Amazon) |
+| 5 | Cerradura solenoide 12 V (queda bloqueada sin energía) | 1 | DigiKey 1528-1191-ND (Adafruit 1512) o Amazon [B07H4J3P3P](https://www.amazon.com.mx/dp/B07H4J3P3P) | Amazon sin verificar |
+| 6 | Relé 1 canal 5 V, optoacoplador, disparo alto/bajo | 1 | Amazon [B07QLZ6T8W](https://www.amazon.com.mx/dp/B07QLZ6T8W) | $126 |
+| 7 | Diodo 1N4007 | 2 | DigiKey 1655-1N4007GCT-ND | — |
+| 8 | Capacitor 1000 µF / 25 V (Nichicon UHE1E102MHD6) | 2 | DigiKey | — |
+| 9 | Resistencia 10 kΩ (IN a GND del relé) | 1 | Electrónica local | — |
+| 10 | Resistencia 56 Ω / 5 W (solo si el 12 V en reposo pasa de 13 V) | 1 | Electrónica local | Condicional |
+| 11 | Extensión USB-A (cable inyector del microscopio) | 1 | Steren | — |
+| 12 | Cable 18/22 AWG, borneras, terminales, termocontráctil | 1 lote | Steren | — |
+| 13 | Cable de alimentación AC con clavija y protección en la línea | 1 | Steren / local | — |
+| 14 | Gabinete ventilado | 1 | Steren | — |
+| 15 | Plantilla (nido) de posición bajo la cámara | 1 | Por fabricar | — |
+| 16 | Tope rígido para la cerradura (prueba de concepto) | 1 | Por fabricar | Ver riesgo de ~200 N |
+
+---
+
 ## DigiKey México
 | Parte | Descripción | Cant. |
 |-------|-------------|-------|
