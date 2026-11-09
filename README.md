@@ -13,7 +13,7 @@ Sistema autónomo (sin PC en la línea) de control de calidad con visión por co
 | 1 | [Propósito y objetivos](docs/01-proposito-objetivos.md) | Qué, por qué, alcance, criterios de éxito |
 | 2 | [Diagramas](docs/02-diagramas.md) | Bloques, flujo, estados, eléctrico |
 | 3 | [Materiales](docs/03-materiales.md) | Lista de materiales y decisiones de equipo |
-| 4 | [Guía de conexiones](docs/04-conexiones.md) | Cableado, fuente, cerradura, relevador |
+| 4 | [Guía de conexiones](docs/04-conexiones.md) | Esquema eléctrico, cableado realista, lista de cables |
 | 5 | [Guía de programación](docs/05-guia-programacion.md) | Software, entorno, máquina de estados |
 | 6 | [Entrenamiento con imágenes](docs/06-entrenamiento-imagenes.md) | Captura, clases, Edge Impulse |
 | 7 | [Seguimiento](docs/07-seguimiento.md) | Pendientes, riesgos, bitácora |
