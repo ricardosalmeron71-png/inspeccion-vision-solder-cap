@@ -17,6 +17,7 @@ Sistema autónomo (sin PC en la línea) de control de calidad con visión por co
 | 5 | [Guía de programación](docs/05-guia-programacion.md) | Software, entorno, máquina de estados |
 | 6 | [Entrenamiento con imágenes](docs/06-entrenamiento-imagenes.md) | Captura, clases, Edge Impulse |
 | 7 | [Seguimiento](docs/07-seguimiento.md) | Pendientes, riesgos, bitácora |
+| 8 | [Carcasa](docs/08-carcasa.md) | Ideas de carcasa y requisitos |
 | – | Presentación: [PPTX](docs/presentacion.pptx) · [PDF](docs/presentacion.pdf) · [HTML](docs/presentacion.html) | Deck del proyecto |
 
 ## Resumen del ciclo
