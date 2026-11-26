@@ -5,7 +5,7 @@
 ## Alimentación
 | Origen | Destino |
 |--------|---------|
-| +5 V | Placa (pin 5V), microscopio (inyector), relevador VCC |
+| +5 V | Placa (por el puerto USB-C, ver abajo), microscopio (inyector), relevador VCC |
 | +12 V | Relevador COM |
 | Relevador NO | Cerradura + |
 | Cerradura − | COM (tierra común) |
@@ -32,6 +32,14 @@
 - [ ] Probar que el relé NO se activa durante el arranque y el reinicio de la placa.
 - [ ] Continuidad: todas las tierras a COM; FG a tierra física.
 - [ ] Sin corto entre +5 V, +12 V y COM.
+
+## Alimentación de la placa (pantalla)
+Según la wiki de Waveshare, la placa se alimenta por **USB-C** (también sirve para programar y depurar). El conector de 12 pines PH2.0 menciona "pines de alimentación", pero la wiki no trae la tabla de pines, y **no aparece un pin "5V"** ni el voltaje o la corriente admitidos.
+- **Forma recomendada:** cable **USB-A a USB-C** (no C a C) cortado del lado USB-A: rojo a +5 V, negro a COM; los hilos de datos no se usan y se aíslan. Una sección de 22 AWG y corto.
+- **Alternativa:** módulo/adaptador USB-C con bornes de tornillo.
+- **Al programar:** desconecta la alimentación externa y alimenta solo por la PC (y desconecta la cámara si es necesario). No conectes las dos fuentes a la vez.
+- **Consumo:** no está publicado; medirlo. Presupuesto de 5 V ≈ 1 A para la placa, además de ≈ 1 A del microscopio (alimentado aparte por el inyector).
+- **Pendiente:** confirmar voltaje admitido, corriente y tabla del conector de 12 pines en el esquemático (PDF) y en docs.waveshare.com antes de energizar.
 
 ## Fuente: bornes
 ![Bornes de la fuente](img/fuente-bornes.png)
@@ -68,11 +76,11 @@ Versión vectorial: [cableado-realista.pdf](img/cableado-realista.pdf). La ubica
 | 2 | Clavija N | PS1 borne 2 (N) | Azul / blanco | 18 AWG |
 | 3 | Clavija tierra | PS1 borne 3 (FG) | Verde-amarillo | 18 AWG |
 | 4 | PS1 borne 7 (+V1, 5 V) | Riel +5 V | Rojo | 18 AWG |
-| 5 | Riel +5 V | Placa pin 5V | Rojo | 18-22 AWG |
+| 5 | Riel +5 V | Placa, puerto USB-C (cable USB-A a USB-C cortado del lado A: rojo = VBUS) | Rojo | 22 AWG |
 | 6 | Riel +5 V | J1 inyector (VBUS, lado microscopio) | Rojo | 22 AWG |
 | 7 | Riel +5 V | K1 VCC | Rojo | 22 AWG |
 | 8 | PS1 bornes 4 y 6 (COM) | Riel COM | Negro | 18 AWG |
-| 9 | Riel COM | Placa GND | Negro | 22 AWG |
+| 9 | Riel COM | Placa, puerto USB-C (negro = GND) | Negro | 22 AWG |
 | 10 | Riel COM | J1 inyector (GND) | Negro | 22 AWG |
 | 11 | Riel COM | K1 GND | Negro | 22 AWG |
 | 12 | Riel COM | L1 − (cerradura) | Negro | 22 AWG |

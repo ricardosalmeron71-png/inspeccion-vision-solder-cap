@@ -6,6 +6,7 @@
 3. Tomar las fotos de entrenamiento mientras llega la placa.
 
 ## Pendientes
+- [ ] Confirmar en el esquemático de Waveshare el voltaje, la corriente y el pinout de alimentación (USB-C y conector de 12 pines). La wiki no muestra un pin 5V.
 - [ ] Confirmar variante del chip ("postv3") antes de cargar ejemplos.
 - [ ] Definir GPIO del relevador.
 - [ ] Probar USB y HDMI simultáneos en el microscopio.

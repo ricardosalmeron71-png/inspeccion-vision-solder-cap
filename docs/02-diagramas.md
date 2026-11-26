@@ -51,7 +51,7 @@ stateDiagram-v2
 ## Eléctrico (resumen)
 ```mermaid
 flowchart LR
-    F5[+5 V] --> P[Placa pin 5V]
+    F5[+5 V] --> P[Placa por USB-C: cable cortado]
     F5 --> INJ[Inyector microscopio]
     F5 --> RV[Relevador VCC]
     F12[+12 V] --> COMR[Relevador COM]
