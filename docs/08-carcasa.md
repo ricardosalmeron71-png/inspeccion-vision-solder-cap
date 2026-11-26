@@ -16,6 +16,17 @@
 
 **Recomendación:** idea 1 (caja integrada) con la pantalla en la tapa, y la placa sujeta con un marco impreso en 3D o separadores. La cerradura y el relé quedan junto a la prensa (cable de 12 V) o dentro de la caja si la distancia es corta.
 
+## Imágenes conceptuales (generadas por IA, solo como inspiración)
+**Idea 2 – carcasa de dos piezas con base inclinada** (vista frontal y trasera con cortes para USB-A, USB-C, microSD, interruptor y salida de cable):
+
+![Carcasa de dos piezas](img/carcasa-1-dos-piezas.png)
+
+**Idea 1 – caja de control integrada** (pantalla en la tapa; adentro, fuente, relé, bornera y fusible; prensaestopas abajo):
+
+![Caja integrada](img/carcasa-2-caja-integrada.png)
+
+> Los textos y valores que aparecen en las pantallas de las imágenes (72 %, 24 °C, 1250, 37) son inventados por el generador y no corresponden a este proyecto.
+
 ## Requisitos de diseño
 - Ventanas para: USB-A (cámara), USB-C (programar), microSD, interruptor, BOOT/RESET.
 - Ranuras de ventilación frente a la fuente; no tapar la rejilla de la fuente (129 × 98 × 38 mm).
