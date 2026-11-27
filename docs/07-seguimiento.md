@@ -46,3 +46,4 @@
 | 2026-11-27 | Firmware: máquina de estados probada en PC (9 pruebas) y esqueleto Arduino con modo simulación |
 | 2026-11-27 | Placa conectada (COM80). Chip ESP32-P4 rev v3.2. Sketch compila (313 KB, 23 %). Subida falla al cambiar a 921600 baudios: bajar Upload Speed |
 | 2026-11-27 | esptool `--no-stub flash-id` OK en COM79 (USB-Serial/JTAG): flash GigaDevice (0xC8), 32 MB. La subida desde Arduino falla con el stub; solución: grabar con `--no-stub write-flash` el binario exportado |
+| 2026-11-27 | Diagnóstico: `esptool --no-stub flash-id` en COM79 (USB-Serial/JTAG) responde bien: flash GigaDevice (0xC8) de 32 MB. La subida normal falla al usar el *stub*; solución temporal: grabar con esptool `--no-stub` |
