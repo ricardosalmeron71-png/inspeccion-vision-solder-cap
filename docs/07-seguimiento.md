@@ -7,7 +7,7 @@
 
 ## Pendientes
 - [ ] Confirmar en el esquemático de Waveshare el voltaje, la corriente y el pinout de alimentación (USB-C y conector de 12 pines). La wiki no muestra un pin 5V.
-- [ ] Confirmar variante del chip ("postv3") antes de cargar ejemplos.
+- [x] Variante del chip: esptool reporta **ESP32-P4 revisión v3.2** → usar Chip Variant `postv3`.
 - [ ] Definir GPIO del relevador.
 - [ ] Probar USB y HDMI simultáneos en el microscopio.
 - [ ] Confirmar que el módulo de relé (Amazon) activa con 3.3 V; puente en alto y resistencia de 10 kΩ.
@@ -44,3 +44,4 @@
 | 2026-11-08 | Flujo corregido: cámara fija en su base mirando hacia abajo; pieza se mueve a la prensa y regresa. Se agregó la fuente RD-65A (foto, datos y bornes) |
 | 2026-11-08 | Decisión: relevador = módulo de 1 canal 5 V de Amazon (se descarta DFR0017); fuente RD-65A confirmada en Amazon ($384.08) |
 | 2026-11-27 | Firmware: máquina de estados probada en PC (9 pruebas) y esqueleto Arduino con modo simulación |
+| 2026-11-27 | Placa conectada (COM80). Chip ESP32-P4 rev v3.2. Sketch compila (313 KB, 23 %). Subida falla al cambiar a 921600 baudios: bajar Upload Speed |
