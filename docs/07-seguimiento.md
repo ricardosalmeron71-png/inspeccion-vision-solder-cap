@@ -45,3 +45,4 @@
 | 2026-11-08 | Decisión: relevador = módulo de 1 canal 5 V de Amazon (se descarta DFR0017); fuente RD-65A confirmada en Amazon ($384.08) |
 | 2026-11-27 | Firmware: máquina de estados probada en PC (9 pruebas) y esqueleto Arduino con modo simulación |
 | 2026-11-27 | Placa conectada (COM80). Chip ESP32-P4 rev v3.2. Sketch compila (313 KB, 23 %). Subida falla al cambiar a 921600 baudios: bajar Upload Speed |
+| 2026-11-27 | esptool `--no-stub flash-id` OK en COM79 (USB-Serial/JTAG): flash GigaDevice (0xC8), 32 MB. La subida desde Arduino falla con el stub; solución: grabar con `--no-stub write-flash` el binario exportado |
