@@ -13,7 +13,8 @@
 - [ ] Confirmar que el módulo de relé (Amazon) activa con 3.3 V; puente en alto y resistencia de 10 kΩ.
 - [ ] Medir +12 V en reposo (carga mínima 56 Ω / 5 W si > 13 V).
 - [ ] Consultar con Schmidt y con seguridad e higiene (CE, control a dos manos).
-- [ ] Decidir ruta Arduino vs ESP-IDF.
+- [ ] Decidir ruta Arduino vs ESP-IDF (ver guía de programación: etapas 1-3).
+- [ ] Verificar que la cámara UVC (usb_host_uvc) y Edge Impulse funcionen en el ESP32-P4.
 - [ ] Definir `T_DESBLOQ` y `T_RETORNO` midiendo el tiempo real de mover la pieza y prensar.
 - [ ] Fabricar la plantilla de posición bajo la cámara.
 - [ ] Confirmar con Schmidt qué pasa si la cerradura se re-bloquea durante la carrera de la palanca.
@@ -42,3 +43,4 @@
 | 2026-11-08 | Presentación (PPTX/PDF) con formato Amphenol RF, imágenes y diagramas |
 | 2026-11-08 | Flujo corregido: cámara fija en su base mirando hacia abajo; pieza se mueve a la prensa y regresa. Se agregó la fuente RD-65A (foto, datos y bornes) |
 | 2026-11-08 | Decisión: relevador = módulo de 1 canal 5 V de Amazon (se descarta DFR0017); fuente RD-65A confirmada en Amazon ($384.08) |
+| 2026-11-27 | Firmware: máquina de estados probada en PC (9 pruebas) y esqueleto Arduino con modo simulación |
